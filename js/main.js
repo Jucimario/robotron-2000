@@ -1,6 +1,6 @@
 const controle = document.querySelectorAll("[data-controle]");
 const estatisticas = document.querySelectorAll("[data-estatistica]");
-
+const robotron = document.querySelector("#robotron");
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -33,6 +33,16 @@ const pecas = {
         "velocidade": -2
     }
 }
+const cores = {
+    "1": "img/robotronPreto.png",
+    "2": "img/robotronBranco.png",
+    "3": "img/robotronAzul.png",
+    "4": "img/robotronVermelho.png",
+    "5": "img/robotronRosa.png",
+    "6": "img/robotronAmarelo.png",
+}
+
+var idCor = 0;
 
 controle.forEach((controle) => {
     controle.addEventListener("click", (evento) => {
@@ -50,7 +60,7 @@ function manipularDados(eventoElement) {
     } else if (operacao === "-") {
         if (parseInt(input.value) > 0) {
             input.value = parseInt(input.value) - 1;
-        } 
+        }
     }
     else {
         console.log("Operação inválida");
@@ -58,7 +68,6 @@ function manipularDados(eventoElement) {
 }
 
 function calcularEstatisticas(peca) {
-
     const item = peca.target.dataset.peca;
     const operacao = peca.target.dataset.controle;
     const input = peca.target.parentNode.querySelector("[data-contador]");
@@ -74,4 +83,16 @@ function calcularEstatisticas(peca) {
             }
         }
     })
+}
+
+
+robotron.addEventListener("click", () => {
+    corDoRobo();
+});
+function corDoRobo() {
+    idCor = idCor + 1;
+    if  (6 < idCor) {
+    idCor = 1
+    }     
+    robotron.src = cores[idCor]; 
 }

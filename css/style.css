@@ -231,3 +231,10 @@ main {
         margin: 10vh auto;
     }
 }
+
+.circulo {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 50px;
+}

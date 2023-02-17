@@ -1,2 +1,2 @@
 # robotron-2000 
-[URL de teste](robotron-2000-omrmurxau-jucimario.vercel.app)
+URL de teste: https://robotron-2000-omrmurxau-jucimario.vercel.app
